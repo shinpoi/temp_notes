@@ -6,8 +6,9 @@
 环境是OpenJDK8，其他版本也没问题，只是启动debug模式的参数可能略有变化。
 
 ### 概述:
-简单来说，运行jvm的debug有远程模式，  
-在远程端启动jvm后，可以在本地通过CLI工具，指定类、方法、行数来给正在运行的程序添加断点，也可以结合IDE操作。
+简单来说，jvm可以设置远程debug模式。  
+通过jvm开放的端口，可以在远程端像在本地debug一样给执行中的程序加断点，查询变量数值等。  
+可以通过CLI工具(jdb, jdk标准组件之一)，也可以结合IDE操作。  
 
 两个后面会出现的术语, `JPDA`和`JDWP`:
 ```
@@ -219,7 +220,7 @@ main[1]
 - 俺更喜欢图文并茂的这篇: https://docs.alfresco.com/5.2/tasks/sdk-debug-intellij.html
 
 简单来说:
-1. 设置`run configuration`, 在左边的`Remote`栏里新建一个，设置host和端口。  
+1. 设置`run configuration`, 点左上的`+`，选`Remote`，设置host和端口。  
 （设置好后Intellj会生成远程端需要的java的运行参数，贴心w）
 2. 切换到刚才的设置，会发现不能点执行，只有debug按钮可以按
 3. 和一般的debug一样，在代码里打好断点
